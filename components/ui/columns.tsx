@@ -1,7 +1,7 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown, MoreHorizontal } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export type Internships = {
     id: string
@@ -28,5 +28,13 @@ export const columns: ColumnDef<Internships>[] = [
     {
       accessorKey: "application",
       header: "Application",
+      cell: ({ row }) => (
+        <Button
+          variant="link"
+          onClick={() => window.open(row.original.application, "_blank")}
+        >
+          Apply
+        </Button>
+      ),
     }
   ]

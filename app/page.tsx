@@ -14,8 +14,8 @@ const data = [
   {
     id: "728ed52d",
     company: "TikTok",
-    role: "Analyst Intern",
-    location: "LA",
+    role: "Software Engineer",
+    location: "NYC",
     application: "https://sensata.wd1.myworkdayjobs.com/en-US/Sensata-Careers/job/Attleboro-Massachusetts/Software-Engineer-Intern---Summer-2025_IRC93689?utm_source=Simplify&ref=Simplify"
   },
 ]
@@ -23,7 +23,7 @@ const data = [
 export default function Home() {
   return (
     <>
-      <div className=" m-auto">
+      <div className=" w-3/4 m-auto">
         <DataTable columns={columns} data={data}/>
       </div>
     </>
