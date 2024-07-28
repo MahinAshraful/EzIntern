@@ -1,21 +1,18 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
 import { db } from "./firebase";
-import { collection, addDoc , getDocs} from 'firebase/firestore';
+import { collection, addDoc , getDocs, query , where} from 'firebase/firestore';
 import { DataTable } from "@/components/data-table";
 import { Internships, columns } from "@/components/ui/columns";
-import getData from "./LoadInternships";
 
 const data = [
   {
-    id: "728ed52f",
     company: "Puffco",
     role: "Analyst Intern",
     location: "LA",
     application: "https://sensata.wd1.myworkdayjobs.com/en-US/Sensata-Careers/job/Attleboro-Massachusetts/Software-Engineer-Intern---Summer-2025_IRC93689?utm_source=Simplify&ref=Simplify"
   },
   {
-    id: "728ed52d",
     company: "TikTok",
     role: "Software Engineer",
     location: "NYC",
@@ -46,28 +43,38 @@ export default async function Home() {
         // Log the four values, including the link
         console.log(`${firstTd}, ${secondTd}, ${thirdTd}, (${fourthTdLink})`);
 
-        // Check if fourthTdLink is defined
-        if (fourthTdLink) {
-          // Add the data to Firestore
-          try {
-            await addDoc(collectionRef, {
-              firstTd: firstTd,
-              secondTd: secondTd,
-              thirdTd: thirdTd,
-              fourthTdLink: fourthTdLink
-            });
-            console.log("Document successfully written!");
-          } catch (error) {
-            console.error("Error writing document: ", error);
-          }
-        } else {
-          console.warn(`Skipping row ${index} due to undefined link.`);
-        }
+// Check if fourthTdLink is defined
+if (fourthTdLink) {
+  // Create a query to check for existing document based on fourthTdLink
+  const querySnapshot = await getDocs(query(collectionRef, where("firstTd", "==", firstTd)));
+
+  // If no documents found, add the new document
+  if (querySnapshot.empty) {
+    try {
+      await addDoc(collectionRef, {
+        firstTd: firstTd,
+        secondTd: secondTd,
+        thirdTd: thirdTd,
+        fourthTdLink: fourthTdLink
+      });
+      console.log("Document successfully written!");
+    } catch (error) {
+      console.error("Error writing document: ", error);
+    }
+  } else {
+    console.log("Document with firstTd already exists.");
+  }
+} else {
+  console.warn(`Skipping row ${index} due to undefined link.`);
+}
+        
       }
     }));
   });
 
-  getData()
+
+
+
 
   return (
     <>

@@ -4,7 +4,6 @@ import { ColumnDef } from "@tanstack/react-table"
 import { Button } from "@/components/ui/button"
 
 export type Internships = {
-    id: string
     company: string
     role: string
     location: string
