@@ -65,7 +65,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-      <div className="flex items-center py-4">
+      <div className="flex items-center py-4 ">
         <Input
           placeholder="Search..."
           value={globalFilter ?? ""}
@@ -75,10 +75,10 @@ export function DataTable<TData, TValue>({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
-              Columns
+              Filter
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent align="end" className="bg-white ">
             {table
               .getAllColumns()
               .filter((column) => column.getCanHide())
