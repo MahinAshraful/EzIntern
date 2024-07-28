@@ -17,7 +17,7 @@ export default async function Home() {
 
   return (
     <>
-      <h1 className="my-4 text-center text-6xl font-bold text-gray-800">EzIntern</h1>
+      <h1 className="my-4 text-center text-6xl font-bold text-gray-800 mt-20 mb-14">EzIntern</h1>
       <div className="w-3/4 m-auto">
         <Suspense fallback={<div>Loading...</div>}>
           <InternshipsTable />
