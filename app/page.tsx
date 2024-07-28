@@ -1,13 +1,7 @@
-import axios from "axios";
-import * as cheerio from "cheerio";
-import { db } from "./firebase";
-import { collection, addDoc , getDocs, query , where} from 'firebase/firestore';
 import { DataTable } from "@/components/data-table";
 import { columns } from "@/components/ui/columns";
 import { getInternships } from "./getInternships";
 import { Suspense } from "react";
-import cleanUrl from "./cleanUrl";
-import updateScrape from "./updateScrape";
 
 export default async function Home() {
 

@@ -1,5 +1,5 @@
 import { db } from './firebase';
-import { collection, getDocs, orderBy } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 
 export interface Internship {
   id: string;
