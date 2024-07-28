@@ -70,7 +70,7 @@ export function DataTable<TData, TValue>({
           placeholder="Search..."
           value={globalFilter ?? ""}
           onChange={(event) => setGlobalFilter(event.target.value)}
-          className="max-w-sm"
+          className="w-[42%]"
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
