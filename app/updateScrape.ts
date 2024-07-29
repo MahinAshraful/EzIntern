@@ -30,6 +30,7 @@ axios.get(url).then(
           // For the fourth <td>, extract both the text and the link URL
           const fourthTdElement = $(tds[3]);
           const fourthTdLink = fourthTdElement.find("a").attr("href"); // Extract the href attribute
+          
 
           // Log the four values, including the link (optional)
           console.log(`${firstTd}, ${secondTd}, ${thirdTd}, (${fourthTdLink})`);
@@ -50,7 +51,8 @@ axios.get(url).then(
                   console.log("Cleaned URL:", cleanedUrl);
                 
                   // Unique identifier based on cleanedUrl
-                  const uniqueId = `url_${cleanedUrl}`; // Create a unique identifier
+                  const uniqueId1 = `url_${cleanedUrl}`; // Create a unique identifier
+                  const uniqueId = uniqueId1.toUpperCase()
                 
                   const urlQuerySnapshot = await getDocs(
                     query(collectionRef, where("firstTd", "==", uniqueId)) // Check for existing document with uniqueId
@@ -58,7 +60,7 @@ axios.get(url).then(
                 
                   if (urlQuerySnapshot.empty) {
                     const dataToInsert = {
-                      firstTd: uniqueId, // Store uniqueId as firstTd
+                      firstTd: uniqueId.substring(4), // Store uniqueId as firstTd
                       secondTd,
                       thirdTd,
                       fourthTdLink,
