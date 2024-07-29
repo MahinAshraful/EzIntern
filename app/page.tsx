@@ -2,12 +2,17 @@ import { DataTable } from "@/components/data-table";
 import { columns } from "@/components/ui/columns";
 import { getInternships } from "./getInternships";
 import { Suspense } from "react";
+import updateScrape from "./updateScrape";
 
 export default async function Home() {
 
-  // uncomment to update
+const url1 = "https://github.com/ouckah/Summer2025-Internships"
+const url2 = "https://github.com/SimplifyJobs/Summer2025-Internships"
 
-  // updateScrape()
+// Call updateScrape for url1
+updateScrape(url1);
+updateScrape(url2);
+
 
   async function InternshipsTable() {
     const internships = await getInternships();
@@ -23,7 +28,6 @@ export default async function Home() {
           <InternshipsTable />
         </Suspense>
       </div>
-
     </>
   );
 }
