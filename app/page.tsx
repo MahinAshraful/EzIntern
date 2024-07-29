@@ -9,9 +9,11 @@ export default async function Home() {
 const url1 = "https://github.com/ouckah/Summer2025-Internships"
 const url2 = "https://github.com/SimplifyJobs/Summer2025-Internships"
 
-// Call updateScrape for url1
+
 updateScrape(url1);
-updateScrape(url2);
+setTimeout(() => {
+  updateScrape(url2);
+}, 10000); // 10000 milliseconds = 10 seconds
 
 
   async function InternshipsTable() {
