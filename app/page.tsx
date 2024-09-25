@@ -18,7 +18,7 @@ const url2 = "https://github.com/SimplifyJobs/Summer2025-Internships"
 //uncomment when update ^
 
   async function InternshipsTable() {
-    const internships = await getInternships();
+    const internships = await getInternships(); // Fetch data from the server
 
     return <DataTable columns={columns} data={internships} />;
   }
