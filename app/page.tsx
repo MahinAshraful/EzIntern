@@ -10,10 +10,10 @@ const url1 = "https://github.com/ouckah/Summer2025-Internships"
 const url2 = "https://github.com/SimplifyJobs/Summer2025-Internships"
 
 
-updateScrape(url1);
-setTimeout(() => {
-  updateScrape(url2);
-}, 10000); // 10000 milliseconds = 10 seconds
+// updateScrape(url1);
+// setTimeout(() => {
+//   updateScrape(url2);
+// }, 10000); // 10000 milliseconds = 10 seconds
 
 //uncomment when update ^
 
