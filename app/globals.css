@@ -4,9 +4,11 @@
 
 
 body {
+    /* gradient background*/
     background: linear-gradient(-45deg, #e0c1b8, #f1e6eb, #c4e2ec, #dcebe7);
     width: 100vw;
     height: 100%;
+     /* animation*/
     animation: gradient 15s ease infinite;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,6 +16,7 @@ body {
 
 }
 
+/* defintion for the gradient animation */
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
