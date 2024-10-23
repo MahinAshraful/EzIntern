@@ -39,7 +39,7 @@ interface DataTableProps<TData, TValue> {
 export function DataTable<TData, TValue>({
   columns,
   data,
-  maxHeight = "750px", // Default height if not specified
+  maxHeight = "760px", // Default height if not specified
 }: DataTableProps<TData, TValue>) {
   const [globalFilter, setGlobalFilter] = React.useState("")
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
@@ -97,7 +97,7 @@ export function DataTable<TData, TValue>({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border border-black">
+      <div className="rounded-md border-1 border-black">
         <div style={{ maxHeight: maxHeight, overflow: 'auto' }}>
           <Table>
             <TableHeader className="sticky top-0 z-10">
