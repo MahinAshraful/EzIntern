@@ -97,7 +97,7 @@ export function DataTable<TData, TValue>({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border-1 border-black">
+      <div className="rounded-md border border-black">
         <div style={{ maxHeight: maxHeight, overflow: 'auto' }}>
           <Table>
             <TableHeader className="sticky top-0 z-10">

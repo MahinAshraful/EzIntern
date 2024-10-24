@@ -2,19 +2,18 @@
 import { initializeApp } from "firebase/app";
 //import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
-import { getFirestore} from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDTELtNogPvihW4ZDdywG2WPLBLemr4WSI",
-  authDomain: "ezintern-headstarter.firebaseapp.com",
-  projectId: "ezintern-headstarter",
-  storageBucket: "ezintern-headstarter.appspot.com",
-  messagingSenderId: "1037080179153",
-  appId: "1:1037080179153:web:e3794a5ec2bce052ba70f0",
-  measurementId: "G-JV0RDRGKZD"
+  apiKey: "AIzaSyBhg8na3rAIgA9yjcQ53lGldyLRrjpSDn4",
+  authDomain: "ezintern-d5f75.firebaseapp.com",
+  projectId: "ezintern-d5f75",
+  storageBucket: "ezintern-d5f75.appspot.com",
+  messagingSenderId: "764182832889",
+  appId: "1:764182832889:web:7bfda4c6aea11901656428"
 };
 
 // Initialize Firebase App
